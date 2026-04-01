@@ -1,14 +1,22 @@
 const prisma = require("../data/prisma");
-const { limiteparticipantes } = require("../services/inscricoes.services");
+const { limiteparticipantes, verificarduplicidade, prazoCancelamento } = require("../services/inscricoes.services");
 
 const cadastrar = async (req, res) => {
+    try{
     const data = req.body;
-    limiteparticipantes(data.usuariosId, data.eventosId)
-    // const item = await prisma.inscricoes.create({
-    //     data
-    // });
+    await verificarduplicidade(data.usuariosId, data.eventosId);
+    let status = await limiteparticipantes (data.usuariosId, data.eventosId)
+    
+    data.status = status;
 
-    res.json({}).status(201).end();
+    const inscricao = await prisma.inscricoes.create({
+        data
+    });
+
+    res.json(inscricao).status(201).end();
+    }catch(error){
+        res.status(500).json(error.toString()).end();
+    }
 };
 
 const listar = async (req, res) => {
@@ -20,33 +28,35 @@ const listar = async (req, res) => {
 const buscar = async (req, res) => {
     const { id } = req.params;
     
-    const item = await prisma.inscricoes.findUnique({
+    const busca = await prisma.inscricoes.findUnique({
         where: { id : Number(id) }
     });
 
-    res.json(item).status(200).end();
+    res.json(busca).status(200).end();
 };
 
 const atualizar = async (req, res) => {
     const { id } = req.params;
     const dados = req.body;
     
-    const item = await prisma.inscricoes.update({
+    if(!prazoCancelamento(eventos)) throw new Error("Não foi possível cancelar o evento. Prazo de 24hrs expirado")
+    
+    const atualizacao = await prisma.inscricoes.update({
         where: { id : Number(id) },
         data: dados
     });
 
-    res.json(item).status(200).end();
+    res.json(atualizacao).status(200).end();
 };
 
 const excluir = async (req, res) => {
     const { id } = req.params;
     
-    const item = await prisma.inscricoes.delete({
+    const exclusao = await prisma.inscricoes.delete({
         where: { id : Number(id) }
     });
 
-    res.json(item).status(200).end();
+    res.json(exclusao).status(200).end();
 };
 
 module.exports = {
