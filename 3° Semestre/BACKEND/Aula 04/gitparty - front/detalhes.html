@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<meta charset="UTF-8">
+<title>Detalhes do Evento</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>Detalhes do Evento</h1>
+</header>
+
+<main>
+
+<div id="detalhes"></div>
+
+<button class="btn-imagem" onclick="abrirModalImagem()">
+Cadastrar imagem
+</button>
+
+</main>
+
+<div id="modalImagem" class="modal">
+
+<div class="modal-content">
+
+<h3>Enviar imagem</h3>
+
+<input type="file" id="imagem">
+
+<div class="modal-buttons">
+
+<button onclick="enviarImagem()">Enviar</button>
+<button onclick="fecharModalImagem()">Cancelar</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<meta charset="UTF-8">
+<title>MF Eventos</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>Os Melhores Eventos da Cidade Amparo!</h1>
+<button id="cad" onclick="abrirModal()">Cadastrar Evento</button>
+<input type="text" id="busca" placeholder="Buscar evento...">
+
+<div id="eventos"></div>
+</header>
+
+<main>
+    
+</main>
+
+<div id="modaleventos" class="modal">
+<form id="formeventos" class="modal-content">
+
+<h2>Novo Evento</h2>
+
+<input type="text" name="url" placeholder="Image URL">
+<input type="text" name="titulo" placeholder="Título">
+<textarea name="descricao" placeholder="Descrição"></textarea>
+<input type="text" name="local" placeholder="Local">
+<input type="text" name="data_evento" placeholder="Data">
+<input type="number" name="capacidade_max" placeholder="Capacidade">
+
+<div class="modal-buttons">
+<button type="submit">Salvar</button>
+<button type="button" onclick="fecharModal()">Cancelar</button>
+</div>
+
+</form>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
