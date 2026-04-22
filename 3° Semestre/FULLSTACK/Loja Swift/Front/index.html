@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Swift</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Loja Swift</h1>
+    <button onclick="cadastro.classList.remove('oculto')">Adicionar Produto</button>
+</header>
+
+<main></main>
+
+<div id="cadastro" class="modal oculto">
+
+    <div class="janela">
+
+        <h2>Adicionar Produto</h2>
+
+        <form id="formcadastro">
+
+            <label>Nome do Produto</label>
+            <input type="text" id="nome" required>
+
+            <label>Descrição</label>
+            <input type="text" id="descricao" required>
+
+            <label>Quantidade</label>
+            <input  id="quantidade" required>
+
+            <label>URL da imagem</label>
+            <input type="text" id="urlImagem">
+
+            <label>Valor</label>
+            <input type="number" id="valor" required>
+
+
+            <br><br>
+
+            <button type="reset" onclick="cadastro.classList.add('oculto')">Cancelar</button>
+
+            <button type="submit">Salvar</button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<div id="detalhes" class="modal oculto">
+
+    <div class="janela">
+
+        <h2 id="nomeProduto"></h2>
+
+        <img id="imgProduto">
+
+        <p><b>Nome</b></p>
+        <input type="text" id="nomeEdit">
+
+        <p><b>Imagem (URL)</b></p>
+        <input type="text" id="imgEdit">
+
+        <p><b>Descrição</b></p>
+        <input id="descricaoEdit">
+
+        <p><b>Quantidade</b></p>
+        <input id="quantidadeEdit">
+
+        <p><b>Valor</b></p>
+        <input type="number" id="valorEdit">
+
+
+        <button onclick="salvarEdicao()">Salvar</button>
+
+        <button onclick="excluirProdutoAtual()">Excluir</button>
+
+        <button onclick="detalhes.classList.add('oculto')">Fechar</button>
+
+    </div>
+
+</div>
+<script src="script.js"></script>
+</body>
+
+</html>
