@@ -1,0 +1,152 @@
+body {
+  background: #4a0f1b95;
+  font-family: the seasons;
+  margin: 0;
+  padding: 0;
+}
+
+.menu {
+  background: #4a0f1b;
+  color: #f2d7dd;
+  padding: 15px;
+  text-align: center;
+}
+
+.menu h2 {
+  margin: 10px;
+  font-size: 40px;
+}
+
+.menu a {
+  color: #f2d7dd;
+  margin: 0 10px;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+.menu button {
+  background: #e8c9cf;
+  color: #3a1119;
+  border: none;
+  padding: 7px 14px;
+  border-radius: 15px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.titulo {
+  text-align: center;
+  margin: 25px 0 10px;
+}
+
+.container {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.card {
+  background: #f7f1f3;
+  border: 1px solid #4a0f1b;
+  border-radius: 15px;
+  padding: 12px;
+  width: 240px;
+  cursor: pointer;
+}
+
+.card:hover {
+  background: #efe4e7;
+}
+
+.card img {
+  width: 100%;
+  height: 140px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 10px 0;
+}
+
+.card p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.card button {
+  background: #4a0f1b;
+  color: #fff;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.clima-card {
+  text-align: center;
+  margin: 20px;
+}
+
+.clima-card input {
+  padding: 8px;
+  border-radius: 15px;
+  border: 1px solid #4a0f1b;
+  width: 430px;
+  height: 30px;
+  background-color: #3a1119;
+}
+
+.clima-card button {
+  padding: 8px 15px;
+  border-radius: 15px;
+  border: 1px solid #4a0f1b;
+  background: #e8c9cf;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.modal-caixa {
+  background: #f7f1f3;
+  width: 300px;
+  margin: 100px auto;
+  padding: 15px;
+  border-radius: 15px;
+  border: 1px solid #4a0f1b;
+}
+
+.modal-caixa input,
+.modal-caixa textarea {
+  width: 90%;
+  padding: 7px;
+  border-radius: 8px;
+  border: 1px solid #4a0f1b;
+  margin-bottom: 8px;
+}
+
+.modal-caixa button {
+  padding: 7px 15px;
+  border-radius: 10px;
+  border: none;
+  background: #4a0f1b;
+  color: white;
+  cursor: pointer;
+}
