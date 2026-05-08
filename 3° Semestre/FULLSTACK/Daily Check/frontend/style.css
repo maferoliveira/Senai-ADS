@@ -1,6 +1,6 @@
 body {
   background: #4a0f1b95;
-  font-family: the seasons;
+  font-family: "the seasons";
   margin: 0;
   padding: 0;
 }
@@ -11,7 +11,6 @@ body {
   padding: 15px;
   text-align: center;
 }
-
 .menu h2 {
   margin: 10px;
   font-size: 40px;
@@ -29,18 +28,25 @@ body {
 }
 
 .menu button {
-  background: #e8c9cf;
+  font-family: The seasons;
+  background: #d1b5b5;
   color: #3a1119;
   border: none;
+  font-weight: bold;
   padding: 7px 14px;
-  border-radius: 15px;
+  border-radius: 10px;
   cursor: pointer;
   margin-left: 10px;
+}
+.menu button:hover{
+  background-color: #c3a5a5;
 }
 
 .titulo {
   text-align: center;
   margin: 25px 0 10px;
+  color: #4a0f1b;
+  text-shadow: 2px 4px 8px #704949;
 }
 
 .container {
@@ -52,17 +58,14 @@ body {
 }
 
 .card {
-  background: #f7f1f3;
+  background: #bc9f9f;
   border: 1px solid #4a0f1b;
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 12px;
   width: 240px;
   cursor: pointer;
 }
 
-.card:hover {
-  background: #efe4e7;
-}
 
 .card img {
   width: 100%;
@@ -81,16 +84,19 @@ body {
 }
 
 .card button {
+  font-family: The seasons;
   background: #4a0f1b;
-  color: #fff;
+  color: #d1b5b5;
   border: none;
   padding: 5px 12px;
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
   margin-top: 10px;
 }
 
 .clima-card {
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
   margin: 20px;
 }
@@ -98,21 +104,31 @@ body {
 .clima-card input {
   padding: 8px;
   border-radius: 15px;
-  border: 1px solid #4a0f1b;
+  border: 2px solid #3a1119;
   width: 430px;
   height: 30px;
-  background-color: #3a1119;
+  background-color: #c7b1b4;
+}
+
+.clima-card input::placeholder {
+  color: #4a0f1b;
 }
 
 .clima-card button {
+  font-family: The seasons;
   padding: 8px 15px;
-  border-radius: 15px;
-  border: 1px solid #4a0f1b;
-  background: #e8c9cf;
+  border-radius: 10px;
+  border: none;
+  background: #d1b5b5;
   cursor: pointer;
   margin-top: 10px;
   margin-left: 5px;
   font-weight: bold;
+}
+
+.clima-card button:hover {
+  background-color: #4e242c;
+  color: #efe4e7;
 }
 
 #modal {
@@ -129,7 +145,7 @@ body {
   width: 300px;
   margin: 100px auto;
   padding: 15px;
-  border-radius: 15px;
+  border-radius: 10px;
   border: 1px solid #4a0f1b;
 }
 
@@ -143,10 +159,67 @@ body {
 }
 
 .modal-caixa button {
+  font-family: The seasons;
   padding: 7px 15px;
-  border-radius: 10px;
+  border-radius: 8px;
   border: none;
   background: #4a0f1b;
-  color: white;
+  color: #d1b5b5;
   cursor: pointer;
+}
+
+@media (max-width: 700px){
+  .menu h2{
+    font-size: 30px;
+  }
+  .menu a{
+    display: inline-block;
+    margin: 8px;
+    font-size: 18px;
+  }
+  .menu-links{
+    flex-direction: column;
+    gap: 10px;
+  }
+  .menu-links button{
+    position: static;
+  }
+  .container{
+    padding: 15px;
+  }
+  .card{
+    width: 100%;
+    max-width: 320px;
+  }
+  .clima-card input{
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px){
+  .menu{
+    padding: 10px;
+  }
+  .menu h2{
+    font-size: 25px;
+  }
+  .menu a{
+    font-size: 16px;
+  }
+  .menu button{
+    margin-top: 10px;
+  }
+  .titulo{
+    font-size: 24px;
+    padding: 0 10px;
+  }
+  .card{
+    padding: 10px;
+  }
+  .card img{
+    height: 120px;
+  }
+  .modal-caixa{
+    margin-top: 60px;
+  }
 }
