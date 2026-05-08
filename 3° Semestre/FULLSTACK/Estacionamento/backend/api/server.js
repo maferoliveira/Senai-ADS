@@ -6,6 +6,12 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+const automovelRoutes = require('./src/routes/automovel.routes')
+app.use('/automovel', automovelRoutes)
+
+const estadiaRoutes = require('./src/routes/estadia.routes')
+app.use('/estadia', estadiaRoutes)
+
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
